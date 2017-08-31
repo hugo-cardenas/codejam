@@ -5,10 +5,6 @@ const generateOutput = require('../generateOutput');
 const getLineOutput = line => {
     const [length, numPeople] = line.split(' ').map(part => parseInt(part));
 
-    // if (numPeople > Math.floor(length / 2)) return '0 0';
-    // else if (numPeople > Math.floor(length / 3)) return '1 0';
-    // else if (numPeople > Math.floor(length / 4)) return '1 1';
-
     let min;
     let max;
 
@@ -21,16 +17,6 @@ const getLineOutput = line => {
         let longestRow = lengths[0];
         min = Math.floor((longestRow - 1) / 2);
         max = Math.ceil((longestRow - 1) / 2);
-
-        // console.log('');
-        // console.log('NUM PEOPLE: ' + numPeople);
-        // console.log('PERSON NUM: ' + (i+1));
-        // console.log(`LENGTHS: [${lengths.join(', ')}]`);
-        // console.log(`COUNT: ${JSON.stringify(count)}`);
-        // console.log('LONGEST ROW: ' + longestRow);
-
-        // console.log('MIN: ' + min);
-        // console.log('MAX: ' + max);
 
         count[longestRow]--;
         if (count[longestRow] < 1) {
